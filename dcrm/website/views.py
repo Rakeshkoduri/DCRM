@@ -16,12 +16,12 @@ def home(request):
         if user is not None:
             login(request,user)
             messages.success(request,"You have logged successfully")
-            return redirect('home')
+            return redirect('index')
         else:
             messages.success(request,"There was an error in logging in...")
-            return redirect('home')
+            return redirect('index')
     else:
-        return render(request,'website/home.html')
+        return render(request,'website/index.html')
 
 
 def login_user(request):
@@ -30,7 +30,7 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     messages.success(request,"You have logged out")
-    return redirect('home')
+    return redirect('index')
 
 
 def register_user(request):
